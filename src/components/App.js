@@ -16,6 +16,7 @@
 
 const App = () => {
   const el = document.createElement('div');
+  //trabajar con map ()--extraer data--enviar nueva data_ 
 
   el.className = 'App';
   el.textContent = 'Hola mundo!';
