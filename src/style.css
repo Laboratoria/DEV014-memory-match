@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: monospace;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(8, 8, 114);
+
+}
+
+.container
+{
+    width: 90rem;
+    height: auto;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    background: rgb(48, 48, 168);
+    padding: 20px 40px;
+    margin-top: 5px;
+}
+   
+
+h2{
+    color: rgb(252, 231, 50);
+    margin: 0 auto;
+    height: 8rem;
+    font-size:6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0px;
+     text-decoration: underline;
+    text-decoration-color: rgb(252, 231, 50) ;
+}
+
+h3{
+    color: rgb(252, 231, 50);
+    margin: 0 auto;
+    font-size:13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0px;
+}
+
+
+.reset-button {
+    position: absolute;
+    bottom: 0px; /* Ajusta el botón hacia arriba según necesites */
+    left: 50%; /* Centra horizontalmente el botón */
+    transform: translateX(-50%); /* Centra horizontalmente el botón de manera precisa */
+    width: 14rem;
+    height: 2rem;
+    padding: 15px 20px;
+    color: rgb(223, 126, 126);
+    background: white;
+    border-color: aqua;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+}
+
+.reset-button:focus {
+    color: white;
+    background: rgb(223, 126, 126);
+}
+
+
+.game{
+    width: 480px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    
+}
+.web__img {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 0;
+    line-height: 1.4rem;
+    width: calc((80% - 12px) / ); /* Ancho de las tarjetas ajustado */
+    border: 5px solid;
+    border-color: rgb(252, 231, 50);
+    transition: transform 0.3s ease;
+    margin-right: 20px; /* Espacio entre las tarjetas */
+    margin-bottom: 20px; /* Espacio inferior entre las tarjetas */
+}

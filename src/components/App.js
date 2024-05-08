@@ -1,4 +1,5 @@
-//
+// Aquí puedes realizar otras configuraciones si es necesario
+// Por ejemplo, puedes adjuntar el componente al DOM
 // Para incluir los diferentes sets de cartas podemos _importar_ el archivo
 // JavasSript que contenga el `export` correspondiente...
 //
@@ -12,15 +13,26 @@
 //   .then(resp => resp.json())
 //   .then(console.log)
 //   .catch(console.error);
-//
+export const App = (data) => {
+  const ul = document.createElement('ul');
+    const duplicatedItems = [...data.items, ...data.items];
 
-const App = () => {
-  const el = document.createElement('div');
+  duplicatedItems.forEach(item => {
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.name;
+    img.classList.add('web__img');
+    ul.appendChild(img);
+  });
 
-  el.className = 'App';
-  el.textContent = 'Hola mundo!';
-
-  return el;
+  return ul;
 };
 
 export default App;
+
+
+
+
+
+
+

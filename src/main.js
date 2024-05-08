@@ -1,3 +1,8 @@
 import App from './components/App.js';
+import data from './data/data.js';
 
-document.getElementById('root').appendChild(App());
+const rootElement = document.querySelector('#root');
+console.log(App(data));
+rootElement.appendChild(App(data)); // Pasa la data importada como argumento a App
+
+
