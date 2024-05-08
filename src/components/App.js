@@ -17,6 +17,7 @@ export const App = (data) => {
   const ul = document.createElement('ul');
     const duplicatedItems = [...data.items, ...data.items];
 
+<<<<<<< HEAD
   duplicatedItems.forEach(item => {
     const img = document.createElement('img');
     img.src = item.image;
@@ -24,6 +25,11 @@ export const App = (data) => {
     img.classList.add('web__img');
     ul.appendChild(img);
   });
+=======
+const App = () => {
+  const el = document.createElement('div');
+  //trabajar con map ()--extraer data--enviar nueva data_ 
+>>>>>>> 881fafee8ad5e5ded3aa8eeb3504173120264d2a
 
   return ul;
 };
