@@ -148,14 +148,18 @@ img{
     background: rgb(243, 49, 49);
 }
 
-/*.img::after
-{   
-    content: '';
-    position: absolute; /* Añade posición absoluta 
-    inset: 0;
-    background: blue;
-    opacity: 0.5;
-    transition: 0.25s;
-    transform: rotateY(0deg);
-    border-radius: 8px;
-    /*display:none;
+
+  
+  #score {
+    font-size: 1.5rem;
+    color: rgb(255, 238, 0);
+    border:3px solid;
+    border-color: yellow;
+    background: rgba(34, 31, 231, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  
+  
