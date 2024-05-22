@@ -23,39 +23,45 @@ export function FlippHandler() {
       } else if (clickCount === 2) {
         secondCard = card;
 
-        console.log(clickCount, "2cond saved >> ", secondCard.getAttribute('data-id'));
-        console.log(firstCard.getAttribute('data-id'), " << comparando >> ", secondCard.getAttribute('data-id'));
+        //console.log(clickCount, "2cond saved >> ", secondCard.getAttribute('data-id'));
+        //console.log(firstCard.getAttribute('data-id'), " << comparando >> ", secondCard.getAttribute('data-id'));
 
         // Verificar si los ids son iguales
         if (firstCard.getAttribute('data-id') === secondCard.getAttribute('data-id')) {
-          console.log('Las tarjetas son iguales.');
+          //console.log('Las tarjetas son iguales.');
 
           score++;
 
           document.getElementById('score').textContent = 'Puntaje: ' + score;
 
 
-        } else {
-          console.log('Las tarjetas son diferentes.');
+        } if (score === 9) {
+          alert('Completaste el juego memory match');
+
+        }
+        else {
+          //console.log('Las tarjetas son diferentes.');
 
           // Desgirar las tarjetas después de un breve retraso
 
           setTimeout(function (firstCard, secondCard) {
-            console.log(firstCard, secondCard)
+            //console.log(firstCard, secondCard)
             firstCard.classList.remove('flipped');
             secondCard.classList.remove('flipped');
           }, 500, firstCard, secondCard);
         }
 
-        // Reiniciar el contador de clics y las tarjetas seleccionadas
-
-        clickCount = 0;
-        firstCard = null;
-        secondCard = null;
       }
+
+      // Reiniciar el contador de clics y las tarjetas seleccionadas
+
+      clickCount = 0;
+      firstCard = null;
+      secondCard = null;
     }
   }
 }
+
 
 
 
