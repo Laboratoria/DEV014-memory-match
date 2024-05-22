@@ -1,44 +1,41 @@
-// Aquí puedes realizar otras configuraciones si es necesario
-// Por ejemplo, puedes adjuntar el componente al DOM
-// Para incluir los diferentes sets de cartas podemos _importar_ el archivo
-// JavasSript que contenga el `export` correspondiente...
-//
-// import pokemon from '../data/pokemon/pokemon.js';
-// console.log(pokemon);
-//
-// O alternativamente podríamos cargar el JSON de forma asíncrona usando
-// `fetch` en el momento que consideremos necesario.
-//
-// fetch('./data/pokemon/pokemon.json')
-//   .then(resp => resp.json())
-//   .then(console.log)
-//   .catch(console.error);
 export const App = (data) => {
-  const ul = document.createElement('ul');
-    const duplicatedItems = [...data.items, ...data.items];
+  const container = document.createElement('div'); // Contenedor principal
+  container.classList.add('container');
 
-<<<<<<< HEAD
-  duplicatedItems.forEach(item => {
-    const img = document.createElement('img');
-    img.src = item.image;
-    img.alt = item.name;
-    img.classList.add('web__img');
-    ul.appendChild(img);
-  });
-=======
-const App = () => {
-  const el = document.createElement('div');
-  //trabajar con map ()--extraer data--enviar nueva data_ 
->>>>>>> 881fafee8ad5e5ded3aa8eeb3504173120264d2a
+  if (data && Array.isArray(data)) {
+    const duplicatedItems = [...data, ...data];
+    
+    console.log("...", duplicatedItems);
 
-  return ul;
+    // generar random duplicated items 
+    
+    duplicatedItems.forEach(() => {
+      const card = document.createElement('div'); // Contenedor de cada tarjeta
+      card.classList.add('card');
+     
+      const frontDiv = document.createElement('div'); // Parte frontal de la tarjeta
+      frontDiv.classList.add('front');
+
+      const backDiv = document.createElement('div'); // Parte trasera de la tarjeta
+      backDiv.classList.add('back');
+      const imgBack = document.createElement('img');
+      // Asigno una imagen aleatoria para la parte trasera de la tarjeta
+      const randomItem = duplicatedItems[Math.floor(Math.random() * duplicatedItems.length)];
+
+      card.dataset.id = randomItem.id; // Asignar un ID a cada tarjeta
+      imgBack.src = randomItem.image;
+      imgBack.alt = randomItem.name;
+      backDiv.appendChild(imgBack);
+
+      card.appendChild(frontDiv);
+      card.appendChild(backDiv);
+
+      container.appendChild(card);
+    });
+ 
+
+  return container;
+}
 };
-
 export default App;
-
-
-
-
-
-
 
