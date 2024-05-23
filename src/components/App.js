@@ -1,26 +1,34 @@
-//
-// Para incluir los diferentes sets de cartas podemos _importar_ el archivo
-// JavasSript que contenga el `export` correspondiente...
-//
-// import pokemon from '../data/pokemon/pokemon.js';
-// console.log(pokemon);
-//
-// O alternativamente podríamos cargar el JSON de forma asíncrona usando
-// `fetch` en el momento que consideremos necesario.
-//
-// fetch('./data/pokemon/pokemon.json')
-//   .then(resp => resp.json())
-//   .then(console.log)
-//   .catch(console.error);
-//
+export const App = (data) => {
+  const container = document.createElement('div'); // Contenedor principal
+  container.classList.add('container');
 
-const App = () => {
-  const el = document.createElement('div');
+  if (data && Array.isArray(data)) {
+    // Duplicar los elementos y luego mezclarlos
+    const duplicatedItems = [...data, ...data];
+    
+    duplicatedItems.forEach(item => {
+      const card = document.createElement('div'); // Contenedor de cada tarjeta
+      card.classList.add('card');
+      card.dataset.id = item.id; // Asignar un ID a cada tarjeta
 
-  el.className = 'App';
-  el.textContent = 'Hola mundo!';
+      const frontDiv = document.createElement('div'); // Parte frontal de la tarjeta
+      frontDiv.classList.add('front');
 
-  return el;
+      const backDiv = document.createElement('div'); // Parte trasera de la tarjeta
+      backDiv.classList.add('back');
+      const imgBack = document.createElement('img');
+      imgBack.src = item.image;
+      imgBack.alt = item.name;
+      backDiv.appendChild(imgBack);
+
+      card.appendChild(frontDiv);
+      card.appendChild(backDiv);
+
+      container.appendChild(card);
+    });
+  }
+
+  return container;
 };
 
 export default App;

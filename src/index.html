@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Memory Match</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Memory Match | javascript</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h2>
+        Memory Game
+      </h2>
+      <h3>Elige dos cards que coincidan con el mismo pokemon ,pongamos a prueba tu memoria!</h3>
+    </header>
+    
+      <div id="score">Puntaje: 0</div>
+    <div id="root" class="rotate"></div>
+    <button class="reset-button" onclick="window.location.reload();">Reiniciar juego</button>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
