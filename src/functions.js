@@ -13,6 +13,7 @@ export function FlippHandler() {
   let score = 0;
 
   return function (card) {
+
     if (!card.classList.contains('flipped')) {
       card.classList.add('flipped');
       clickCount++;
@@ -22,47 +23,44 @@ export function FlippHandler() {
         console.log(clickCount, "1ero saved >> ", firstCard);
       } else if (clickCount === 2) {
         secondCard = card;
-
-        //console.log(clickCount, "2cond saved >> ", secondCard.getAttribute('data-id'));
-        //console.log(firstCard.getAttribute('data-id'), " << comparando >> ", secondCard.getAttribute('data-id'));
-
+        console.log(clickCount, "2cond saved >> ", secondCard.getAttribute('data-id'));
+        console.log(firstCard.getAttribute('data-id'), " << comparando >> ", secondCard.getAttribute('data-id'));
         // Verificar si los ids son iguales
+        
         if (firstCard.getAttribute('data-id') === secondCard.getAttribute('data-id')) {
-          //console.log('Las tarjetas son iguales.');
+          console.log('Las tarjetas son iguales.');
 
           score++;
-
           document.getElementById('score').textContent = 'Puntaje: ' + score;
 
 
-        } if (score === 9) {
-          alert('Completaste el juego memory match');
+          // Verificar si se ha alcanzado el puntaje de 9 
+          setTimeout(() => {
+            if (score === 9) {
+              alert('Completaste el juego memory match');
+            }
+          }, 100);
 
-        }
-        else {
-          //console.log('Las tarjetas son diferentes.');
 
+        } else {
+          console.log('Las tarjetas son diferentes.');
           // Desgirar las tarjetas después de un breve retraso
-
           setTimeout(function (firstCard, secondCard) {
-            //console.log(firstCard, secondCard)
+            console.log(firstCard, secondCard)
             firstCard.classList.remove('flipped');
             secondCard.classList.remove('flipped');
-          }, 500, firstCard, secondCard);
+          }, 400, firstCard, secondCard);
         }
 
+        // Reiniciar el contador de clics y las tarjetas seleccionadas
+        clickCount = 0;
+        firstCard = null;
+        secondCard = null;
       }
-
-      // Reiniciar el contador de clics y las tarjetas seleccionadas
-
-      clickCount = 0;
-      firstCard = null;
-      secondCard = null;
     }
-  }
+
+  };
 }
-
-
 
 
 
